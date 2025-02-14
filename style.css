@@ -28,3 +28,46 @@ body {
     font-size: 1rem;
     margin: 0 0 20px;
 }
+
+.card button {
+    background: linear-gradient(135deg, #b3095b, #d42f82);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card button:hover {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.hidden-content {
+    margin-top: 20px;
+    --s: 100%;
+    width: var(--s);
+    aspect-ratio: 1;
+    padding: calc(.09*var(--s)) calc(var(--s)/2 - var(--_p));
+    box-sizing: border-box;
+    object-fit: cover;
+    border-image: 
+        radial-gradient(#e5414e 69%,#0000 70%) 
+        84.5%/calc(var(--s)/2)/0 var(--_p);
+    clip-path: polygon(
+        calc(-41% - var(--_p)) 0,
+        calc(50%  - var(--_p)) 91%,
+        calc(50%  + var(--_p)) 91%,
+        calc(141% + var(--_p)) 0);
+    transition: .5s;
+    --_p: 0px;
+}
+.hidden-content.slide {
+    --_p: calc(var(--s)/2);
+}
+.hidden-content.show {
+    aspect-ratio: 0;
+}
+  
